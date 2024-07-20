@@ -1,0 +1,124 @@
+<% layout("/layouts/boilerplate") %>
+<style>
+    #features{
+        display: flex;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        height: 3.5rem;
+        overflow: hidden;
+    }
+    #feature{
+        text-align: center;
+        opacity: 0.7;
+        color: black;
+    }
+    #feature p{
+        font-size: small;
+        text-decoration: dotted;
+    }
+    #feature:hover{
+        opacity: 1;
+        border-bottom: 2px solid rgba(90, 86, 86, 0.409) !important;
+
+    }
+    #feature:active{
+        font-size: x-small;
+
+    }
+    a:link {
+        text-decoration: none;
+    }
+    
+    
+</style>
+<body>
+    <div id="features" class="col-12">
+        <a href="/listing/filter/FarmHouse"><div id="feature" class="ms-2">
+            <i class="fa-solid fa-tractor"></i>
+            <p>FarmHouse</p>
+        </div></a>
+        <a href="/listing/filter/TinyHome"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-house-chimney"></i>
+            <p>TinyHome</p>
+        </div></a>
+        <a href="/listing/filter/Dome"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-igloo"></i>
+            <p>Dome</p>
+        </div></a>
+        <a href="/listing/filter/BoatHouse"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-ferry"></i>
+            <p>BoatHouse</p>
+        </div></a>
+        <a href="/listing/filter/Mansion"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-building-columns"></i>
+            <p>Mansion</p>
+        </div></a>
+        <a href="/listing/filter/Island"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-umbrella-beach"></i>            
+            <p>Island</p>
+        </div></a>
+        <a href="/listing/filter/Castle"><div id="feature" class="ms-4">
+            <i class="fa-brands fa-fort-awesome"></i>
+            <p>Castle</p>
+        </div></a>
+        <a href="/listing/filter/Camping"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-tent"></i>
+            <p>Camping</p>
+        </div></a>
+        <a href="/listing/filter/Arctic"><div id="feature" class="ms-4">
+            <i class="fa-regular fa-snowflake"></i>
+            <p>Arctic</p>
+        </div></a>
+        <a href="/listing/filter/Beach"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p>Beach</p>
+        </div></a>
+        <a href="/listing/filter/TreeHouse"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-tree"></i>
+            <p>TreeHouse</p>
+        </div></a>
+        <a href="/listing/filter/Mountain"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-mountain-city"></i>
+            <p>Mountain</p>
+        </div></a>
+        <a href="/listing/filter/Resort"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-hotel"></i>
+            <p>Resort</p>
+        </div></a>
+        <a href="/listing/filter/WaterVilla"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-bridge-water"></i>
+            <p>WaterVilla</p>
+        </div></a>
+        <a href="/listing/filter/Villa"><div id="feature" class="ms-4">
+            <i class="fa-solid fa-vihara"></i>
+            <p>Villa</p>
+        </div></a>
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% if (!listings || listings.length === 0) { %>
+            <h4 class="mb-4">No such Places are Added!</h4>
+        <% } else { %>
+            <% for(let listing of listings) { %>
+                <a href="/listing/<%= listing._id %>" class="listingLink">
+                    <div class="card listing-card">
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt="..." style="height: 20rem;">
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b><%= listing.title %></b>
+                                <br>
+                                &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            <% } %>
+        <% } %>
+    </div>
+    
+    <form action="/listing/new" method="GET" class="mb-4">
+        <button class="btn btn-dark addbtn">Add New</button>
+    </form>
+    
+</body>
+

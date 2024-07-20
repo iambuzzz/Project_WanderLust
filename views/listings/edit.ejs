@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br>
+            <h1>Edit</h1>
+            <form method="post" action="/listing/<%=list._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" type="text" value="<%=list.title%>" class="form-control" required>
+                    <div class="valid-feedback">Title Looks Good!</div>
+                    <div class="invalid-feedback">Title Can't be Empty!</div>
+                </div>
+                <div class="mb-3">
+                    <p>Original Image</p>
+                    <img src="<%=originalImageUrl%>" alt="img" class="origImg">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload New Image</label>
+                    <input name="listing[image]" type="file" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Select Category</label>
+                    <select class="form-select" name="listing[category]" aria-label="Default select example">
+                        <option value="Others" selected>Others</option>
+                        <option value="FarmHouse">FarmHouse</option>
+                        <option value="TinyHome">TinyHome</option>
+                        <option value="Dome">Dome</option>
+                        <option value="BoatHouse">BoatHouse</option>
+                        <option value="Mansion">Mansion</option>
+                        <option value="Island">Island</option>
+                        <option value="Castle">Castle</option>
+                        <option value="Camping">Camping</option>
+                        <option value="Arctic">Arctic</option>
+                        <option value="TreeHouse">TreeHouse</option>
+                        <option value="Mountain">Mountain</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Resort">Resort</option>
+                        <option value="Villa">Villa</option>
+                        <option value="WaterVilla">WaterVilla</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" name="listing[description]"  value="<%=list.description%>" class="form-control" required > 
+                    <div class="invalid-feedback">Description Can't be Empty!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" name="listing[price]" type="number" value="<%=list.price%>" class="form-control" required>
+                    <div class="invalid-feedback">Price Can't be Empty!</div>
+
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="listing[location]" type="text" value="<%=list.location%>" class="form-control" required>
+                        <div class="invalid-feedback">Location Can't be Empty!</div>
+
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" type="text" value="<%=list.country%>" class="form-control" required>
+                        <div class="invalid-feedback">Country Can't be Empty!</div>
+
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-dark addbtn mb-5">Edit</button>
+            </form>
+        </div>
+    </div> 
+</body> 

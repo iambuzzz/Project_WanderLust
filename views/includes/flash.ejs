@@ -1,0 +1,14 @@
+<!-- kyuki success ki array to exist kregi..but success ki length 0 bhi hogi to ye alert nhi hoga -->
+<%if(success && success.length){%> 
+    <div class="alert alert-success mt-4 alert-dismissible fade show" role="alert">
+        <%=success%>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>
+<!-- //failure -->
+<%if(failure && failure.length){%> 
+    <div class="alert alert-danger mt-4 alert-dismissible fade show" role="alert">
+        <%=failure%>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>
