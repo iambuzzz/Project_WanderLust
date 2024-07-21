@@ -195,3 +195,12 @@
     -webkit-transition: background-position .7s;
     transition: background-position .7s;
   }
+  .searchBox{
+    border-radius: 20px;
+  }
+  .searchButton{
+    border-radius: 20px;
+    background-color: #fe424d !important;
+    border: none;
+    color: white;
+  }
