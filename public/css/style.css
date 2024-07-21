@@ -6,7 +6,7 @@ body{
 }
 /* navbar */
 .navbar{
-    height: 5rem;
+    height: 5rem auto;
     background-color: white;
 }
 /* navbar ka icon */
