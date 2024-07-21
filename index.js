@@ -14,10 +14,12 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const wrapAsync = require("./utils/wrapAsync.js");
 //routes
 const listingg = require("./routes/listingg.js");
 const revieww = require("./routes/revieww.js");
 const userr = require("./routes/userr.js");
+const listingController = require("./controllers/listing.js");
 
 app.use(methodOverride("_method"));
 app.set("view engine","ejs");
@@ -80,7 +82,7 @@ app.use((req,res,next)=>{
 app.use("/listing",listingg);
 app.use("/listing/:id/reviews",revieww);
 app.use("/",userr);
-
+app.get("/",wrapAsync(listingController.index));
 //agar koi bhi route match nhi hua.. to hum page not found ka error bhejenge
 app.all("*",(req,res,next)=>{
     next(new MyError(404,"Page Not Found!!"));
