@@ -54,6 +54,7 @@ body{
 .listing-card{
     border: none !important;
     margin-bottom: 2rem;
+    max-width: 800px !important;
 }
 .card-img-top{
     border-radius:1rem !important ;
@@ -87,7 +88,7 @@ body{
 }
 /* show page */
 .showimg{
-    height: 30vh;
+    max-height: 40vh !important;
 }
 .btns{
     display: flex;
@@ -109,3 +110,4 @@ body{
 .my-class{
     font-size: 1rem;
 }
+
