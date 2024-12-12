@@ -31,7 +31,7 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 //db connect
 async function main(){
-    await mongoose.connect(process.env.ATLASDB_URL);
+    await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
 }
 main().then((res)=>{
     console.log("connected to db!");
