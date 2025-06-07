@@ -9,6 +9,10 @@ body{
     height: 5rem auto;
     background-color: white;
 }
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
 /* navbar ka icon */
 .fa-compass{
     color: #fe424d;
