@@ -13,6 +13,16 @@ body{
     display: flex;
     align-items: center;
 }
+@media (max-width: 768px) {
+  .ss{
+    margin-top: 15px;
+  }
+}
+.navbar-collapse {
+  transition: margin-bottom 0.3s ease;
+  justify-content: center;
+}
+
 /* navbar ka icon */
 .fa-compass{
     color: #fe424d;
