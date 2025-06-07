@@ -15,8 +15,24 @@ body{
 }
 @media (max-width: 768px) {
   .ss{
-    margin-top: 15px;
+    border-top: 1px solid #4e4b4b66 !important;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4e4b4b3e !important;
+
   }
+  .nav-link{
+    color: #0e0d0d9e !important;
+    /* text-align: center; */
+    /* margin-left: 10px; */
+    border-bottom: 1px solid #4e4b4b3e !important;
+}
+.menulink{
+    margin-left: 7px;
+
+}
 }
 .navbar-collapse {
   transition: margin-bottom 0.3s ease;
@@ -29,9 +45,7 @@ body{
     font-size: 2rem;
 }
 /* navbar me jo links hi Home wagera */
-.nav-link{
-    color: #0e0d0d !important;
-}
+
 
 /* footer */
 .f-info-links,
