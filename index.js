@@ -239,6 +239,9 @@ app.use("/",userr);
 // app.get("/listings/error",(req,res)=>{
 //     res.render("./errors/error.ejs");
 // });
+app.get("/", (req, res) => {
+    res.redirect("/listing");
+});
 //agar koi bhi route match nhi hua.. to hum page not found ka error bhejenge
 app.all("*",(req,res,next)=>{
     next(new MyError(404,"Page Not Found!!"));
